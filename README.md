@@ -5,9 +5,9 @@ A [phantomjs](http://phantomjs.org/) script which checks secure web pages for in
 
 Example usage:
 <pre>
-phantomjs get-http-resources.js --url=http://google.com
+phantomjs get-http-resources.js --url=https://google.com
 </pre>
 
 <pre>
-phantomjs get-http-resources.js --url=http://google.com --verbose=true
+phantomjs get-http-resources.js --url=https://google.com --verbose=true
 </pre>
