@@ -43,11 +43,11 @@ GetHttpResources.prototype.getArguments = function () {
 GetHttpResources.prototype.checkUrlArgument = function () {
     if (!this._args.url) {
         console.log("ERROR: You have to specify valid https URL with --url=<https://URL> argument");
-        phantom.exit(1);
+        phantom.exit(255);
     }
     else if (!this._args.url.match('^https:\/\/')) {
         console.log("ERROR: This url doesn't start with https://");
-        phantom.exit(1);
+        phantom.exit(255);
     }
 };
 
@@ -82,6 +82,7 @@ GetHttpResources.prototype.get = function () {
     page.open(that._args.url, function (status) {
         if (status !== 'success') {
             console.log('ERROR: Failed to load URL :' + that._args.url);
+            phantom.exit(255);
         } else {
             if (httpResources.length === 0) {
                 console.log('No HTTP resources found');
@@ -94,8 +95,8 @@ GetHttpResources.prototype.get = function () {
                     console.log(httpResources[i]);
                 }
             }
+            phantom.exit(httpResources.length);
         }
-        phantom.exit();
     });
 };
 
