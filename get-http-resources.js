@@ -77,6 +77,8 @@ GetHttpResources.prototype.get = function () {
         }
     };
 
+    page.settings.userAgent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.19 (KHTML, like Gecko)';
+    
     page.open(that._args.url, function (status) {
         if (status !== 'success') {
             console.log('ERROR: Failed to load URL :' + that._args.url);
