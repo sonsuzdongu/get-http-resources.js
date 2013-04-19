@@ -78,6 +78,10 @@ GetHttpResources.prototype.get = function () {
     };
 
     page.settings.userAgent = 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0)';
+
+    page.onError = function(e) {
+        that.log("-> JavaScript Error Occured On Page:" + e);
+    };
     
     page.open(that._args.url, function (status) {
         if (status !== 'success') {
