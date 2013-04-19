@@ -77,7 +77,7 @@ GetHttpResources.prototype.get = function () {
         }
     };
 
-    page.settings.userAgent = 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; Trident/6.0)';
+    page.settings.userAgent = 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0)';
     
     page.open(that._args.url, function (status) {
         if (status !== 'success') {
